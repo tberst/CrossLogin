@@ -31,10 +31,10 @@ function Auth(props: Props) {
     }
 
     return (
-        <div>AUTH
-            <button onClick={() => onBtnClicked(!isAuthenticated)}>
+        <div className="w-screen h-screen flex flex-col items-center justify-center">
+            <button  className="text-lg font-semibold bg-gray-800 text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black" onClick={() => onBtnClicked(!isAuthenticated)}>
                 {isAuthenticated && <span>LogOut</span>}
-                {!isAuthenticated && <span>Login</span>}
+                {!isAuthenticated && <span>Login</span>} 
             </button>
 
         </div>

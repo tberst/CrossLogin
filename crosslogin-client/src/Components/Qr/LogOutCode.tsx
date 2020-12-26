@@ -7,7 +7,7 @@ interface Props {
     connectionId: string;
 }
 
-function QrCodeComponent(props: Props) {
+function LogOutCode(props: Props) {
     const { isAuthenticated, connectionId } = props
     let url = window.location.href;
     if (!connectionId) {
@@ -15,28 +15,28 @@ function QrCodeComponent(props: Props) {
     }
     else
     {
-        url = window.location.href +"Auth/"+connectionId;
+        url = window.location.href +"LogOut/"+connectionId;
     }
 
-    consola.info("connectionId : " + connectionId);
-
-
-    if (isAuthenticated) {
+    if (!isAuthenticated) {
         return (< React.Fragment ></ React.Fragment>);
     }
     else {
         return (< React.Fragment >
-            <div className="h-screen flex flex-col items-center justify-center px-5 text-gray-700 w-screen">
+        <div className="self-start">
+
+            <div className="flex flex-col items-center justify-center ">
                 <div className="" >
-                    <QRCode value={url} size={400}/>
+                    <QRCode value={url} size={100}/>
                 </div>
                 <div>
                     <span>{url}</span>
                 </div>
+            </div>
             </div>
         </React.Fragment>
         )
     }
 }
 
-export default QrCodeComponent
+export default LogOutCode

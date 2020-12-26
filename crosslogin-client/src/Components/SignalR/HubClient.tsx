@@ -102,9 +102,9 @@ const HubClient = (props: any) => {
     });
 
     return (
-        <div>{childrenWithProps}
+        <React.Fragment>{childrenWithProps}
 
-        </div>
+        </React.Fragment>
     );
 };
 
